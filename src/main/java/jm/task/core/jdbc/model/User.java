@@ -22,6 +22,7 @@ public class User {
 
     }
 
+
     public User(String name, String lastName, Byte age) {
         this.name = name;
         this.lastName = lastName;
@@ -67,14 +68,12 @@ public class User {
     public String getPassword() {
         return null;
     }
+
     @Override
-    public String toString(){
-        return "User{" +
-                "id=" + id +
-                ", Name='" + name + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", age=" + age +
-                '}';
+    public String toString() {
+        return null;
     }
-    }
+}
+
+
 
