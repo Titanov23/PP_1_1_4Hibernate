@@ -32,6 +32,7 @@ public class UserDaoJDBCImpl implements UserDao {
     public void cleanUsersTable() {
 
     }
+}
 //    private Object connection;
 //
 //    public UserDaoJDBCImpl() {
