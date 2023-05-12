@@ -9,6 +9,7 @@ public class User {
     @Id
     private Long id;
 
+//
     @Column
     private String name;
 
