@@ -22,7 +22,7 @@ public class Main {
             userDao.dropUsersTable();
       }
 
-    private static class Util {
+    public static class Util {
         public static void getConnection() {
         }
     }
