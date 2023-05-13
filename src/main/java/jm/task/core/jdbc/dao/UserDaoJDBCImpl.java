@@ -4,6 +4,7 @@ import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.util.Util;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.List;
 
 import static jm.task.core.jdbc.Main.Util.getConnection;
@@ -12,10 +13,11 @@ public class UserDaoJDBCImpl extends Util implements UserDao {
     private static final String INSERT_NEW = "INSERT INTO dish VALUES(?, ?, ?, ?,)";
     Connection connection = getConnection();
     public UserDaoJDBCImpl() {
-
+        PreparedStatement preparedStatement = null;
     }
 
     public void createUsersTable() {
+//
 
 
 
