@@ -3,6 +3,8 @@ package jm.task.core.jdbc;
 import jm.task.core.jdbc.dao.UserDao;
 import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
 
+import java.sql.Connection;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -23,7 +25,8 @@ public class Main {
       }
 
     public static class Util {
-        public static void getConnection() {
+        public static Connection getConnection() {
+            return null;
         }
     }
 }
