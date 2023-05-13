@@ -16,7 +16,7 @@ public class UserDaoJDBCImpl extends Util implements UserDao {
         PreparedStatement preparedStatement = null;
     }
 
-    public void createUsersTable() {
+    public void createUsersTable(){
 //
 
 
