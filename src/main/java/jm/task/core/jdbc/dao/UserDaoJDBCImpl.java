@@ -4,20 +4,29 @@ import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.util.Util;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 
-import static jm.task.core.jdbc.Main.Util.getConnection;
+public class UserDaoJDBCImpl  implements UserDao {
 
-public class UserDaoJDBCImpl extends Util implements UserDao {
-    private static final String INSERT_NEW = "INSERT INTO dish VALUES(?, ?, ?, ?,)";
-    Connection connection = getConnection();
     public UserDaoJDBCImpl() {
-        PreparedStatement preparedStatement = null;
+        try(Connection connection = Util.connectionIdbc();
+            Statement statement = connection.createStatement()) {
+            statement.execute("create table IF NOT EXISTS `pp_1_1_3-4_jdbc_hibernate`.`users`" +
+                    "(`id`int not null auto_increment," + "`name` varchar(34)," + "`lastname` varchar(25),"
+                    + "`age` tinyint(3)," + "primary key (id))");
+            System.out.println("Таблица пользователей создана");
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+
     }
 
-    public void createUsersTable(){
-//
+    public void createUsersTable() {
+
 
 
 

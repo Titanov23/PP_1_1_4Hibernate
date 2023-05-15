@@ -7,9 +7,9 @@ import java.sql.SQLException;
 public class Util { // реализуйте настройку соеденения с БД
 
 
-        private static final String URL = "jdbc:mysql://localhost:3306/pp_1_1_3-4_jdbc_hibernate";
-        private static final String LOGIN = "root";
-        private static final String PASSWORD = "mysq77";
+        protected static final String URL = "jdbc:mysql://localhost:3306/pp_1_1_3-4_jdbc_hibernate";
+        protected static final String LOGIN = "root";
+        protected static final String PASSWORD = "mysq77";
 
         private static Connection connection; //JDBC
 
