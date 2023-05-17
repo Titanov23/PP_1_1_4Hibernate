@@ -3,10 +3,8 @@ package jm.task.core.jdbc.dao;
 import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.util.Util;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserDaoJDBCImpl  implements UserDao {
@@ -83,10 +81,30 @@ public class UserDaoJDBCImpl  implements UserDao {
     }
 
     public List<User> getAllUsers() {
-        return null;
+        List<User> list = new ArrayList<>();
+        try (Connection connection = Util.connectionIdbc();
+             Statement statement = connection.createStatement()) {
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM `pp_1_1_3-4_jdbc_hibernate`.`users`");
+//            мы отправили запрос на выбор всех записей из таблицы Users
+            while (resultSet.next()) {
+                User user = new User(resultSet.getLong("id"), resultSet.getString("name"),
+                        resultSet.getString("lastname"), resultSet.getByte("age"));
+                list.add(user);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return list;
     }
 
-    public void cleanUsersTable() {
 
+    public void cleanUsersTable() {
+    try(Connection connection = Util.connectionIdbc();
+    Statement statement = connection.createStatement()) {
+    statement.executeUpdate("DELETE FROM users");
+
+    } catch (SQLException e) {
+        throw new RuntimeException(e);
+    }
     }
 }

@@ -30,7 +30,13 @@ public class UserServiceImpl implements UserService {
     }
 
     public List<User> getAllUsers() {
-        return null;
+        List<User> list = userDaoJDBCImpl.getAllUsers();
+        if (list != null && !list.isEmpty()) {
+            for (User user : list) {
+                System.out.println(user.toString());
+            }
+        }
+        return list;
     }
 
     public void cleanUsersTable() {
