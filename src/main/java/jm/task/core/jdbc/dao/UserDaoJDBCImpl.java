@@ -34,7 +34,7 @@ public class UserDaoJDBCImpl  implements UserDao {
     public void dropUsersTable() {
         try (Connection connection = Util.connectionIdbc();
         Statement statement = connection.createStatement()){
-            statement.executeUpdate("drop table IF EXISTS `pp_1_1_3-4_jdbc_hibernate`.`users`");
+            statement.executeUpdate("drop table IF EXISTS `pp_1_1_4Hibernate`.`users`");
             System.out.println("Таблица пользователей удалена");
 
         } catch (SQLException e) {
@@ -87,7 +87,7 @@ public class UserDaoJDBCImpl  implements UserDao {
             ResultSet resultSet = statement.executeQuery("SELECT * FROM `pp_1_1_3-4_jdbc_hibernate`.`users`");
 //            мы отправили запрос на выбор всех записей из таблицы Users
             while (resultSet.next()) {
-                User user = new User(resultSet.getLong("id"), resultSet.getString("name"),
+                User user = new User(resultSet.getString("name"),
                         resultSet.getString("lastname"), resultSet.getByte("age"));
                 list.add(user);
             }

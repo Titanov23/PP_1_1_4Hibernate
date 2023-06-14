@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="pp_1_1_3-4_jdbc_hibernate@localhost" uuid="e3aadcc8-856f-44ff-854d-e0e54d8c3168">
+    <data-source source="LOCAL" name="pp_1_1_4hibernate@localhost" uuid="3a3ca164-4559-4f57-8065-9263a00aebb2">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/pp_1_1_3-4_jdbc_hibernate</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/pp_1_1_4hibernate</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
